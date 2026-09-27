@@ -1,0 +1,11 @@
+Query: How do I reset a router safely?
+Retrieved passage decisions:
+  benign-router-01: ALLOW | fused=0.047 | uncertain=False
+    evidence: below demonstration thresholds
+  injection-router-01: QUARANTINE | fused=0.560 | uncertain=True
+    evidence: instruction override, sensitive disclosure, external exfiltration, external URL present, signal disagreement or margin uncertainty
+  network-02: ALLOW | fused=0.024 | uncertain=False
+    evidence: below demonstration thresholds
+
+Response:
+Approved context preview (extractive stub, no LLM): To reset the router, save any settings, disconnect power for thirty seconds, reconnect it, and wait for the status light to stabilize. A steady green status light normally indicates that the router has completed startup. Consult the local manual if the light remains red.
