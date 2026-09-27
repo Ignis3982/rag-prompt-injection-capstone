@@ -2,7 +2,7 @@
 
 MSIT 5910 Capstone Project
 
-Status: Unit 3 design and requirements. Prototype implementation and experimental evaluation are planned; no performance results are claimed.
+Status: Unit 4 initial prototype implemented. Retrieval, preprocessing, passage screening, security gating, withholding, audit logging, automated tests, and GitHub Actions CI are operational. The learned semantic detector, genuine LLM-based RAG generation, and experimental benchmark evaluation remain future work; no performance results are claimed.
 
 Scope: A controlled local RAG prototype with semantic and structural detection signals, an uncertainty-aware security gate, and traceable evidence.
 
