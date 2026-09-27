@@ -1,0 +1,39 @@
+{
+  "timestamp_utc": "2026-09-27T06:39:45.822445+00:00",
+  "query_length": 31,
+  "retrieved_count": 1,
+  "decisions": [
+    {
+      "document_id": "injection-router-only",
+      "rank": 1,
+      "decision": "quarantine",
+      "reason": "instruction override, sensitive disclosure, external exfiltration, external URL present, signal disagreement or margin uncertainty",
+      "window_offsets": [
+        [
+          0,
+          178
+        ]
+      ],
+      "detection": {
+        "similarity_score": 0.2669,
+        "structural_score": 1.0,
+        "fused_score": 0.5602,
+        "disagreement": 0.7331,
+        "uncertain": true,
+        "reasons": [
+          "instruction override",
+          "sensitive disclosure",
+          "external exfiltration",
+          "external URL present",
+          "signal disagreement or margin uncertainty"
+        ]
+      }
+    }
+  ],
+  "approved_count": 0,
+  "corpus_sha256": "763cc2fb3f4ebc9ab817a0b6b1428ab492b8e1974c6bedeffada863f0d6bd4e0",
+  "implementation_sha256": "188fb19050f780f771cea83062adf52aab881c66c9734188ecf6efeea072e7b0",
+  "python_version": "3.12.14",
+  "sklearn_version": "1.8.0",
+  "scope": "synthetic_smoke_demo_not_benchmark"
+}

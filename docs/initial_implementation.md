@@ -1,0 +1,15 @@
+Initial Implementation Notes
+
+This version establishes a partial implementation of the Unit 3 module design. It demonstrates relevant-passage retrieval and a screening-to-gate flow, including withholding, an extractive context preview, and an audit record. The established research direction remains learned semantic signals plus structural rules; the lexical substitute is explicitly temporary.
+
+M1 retrieval accepts a query, builds a local TF-IDF index over synthetic fixtures, and returns ranked document objects with identifiers. Zero-similarity documents are excluded. M2 preprocessing bounds each passage at 8000 characters, creates 1000-character windows with 200-character overlap, and preserves original start and end offsets. This character-based demonstration policy will need review against the later semantic model's token limits.
+
+At M3, TF-IDF similarity to four instruction-oriented prototypes supplies an uncalibrated lexical feature. It is not a trained semantic model. M4 applies regular expressions and URL indicators. M5 combines the two features with illustrative weights of 0.60 and 0.40 and flags disagreement or a middle score range. These values were chosen for demonstrating the interfaces, not estimated from benchmark data. They must not be reported as statistically calibrated confidence.
+
+M6 returns allow, quarantine, or block. The most restrictive window decision determines treatment of the entire passage. An exception, invalid score, or oversized passage withholds that passage. The present code catches raised failures but does not impose a hard timeout on a hung synchronous detector. M7 concatenates approved passages for an extractive preview or reports insufficient approved context. It does not run an LLM, execute retrieved instructions, or establish end-to-end attack success.
+
+M8 records decisions, reason codes, window offsets, document identifiers, and source/corpus hashes without raw query or passage text. It currently reports the highest-severity window's detector signals and all window offsets; complete suspicious-span attribution remains future work. M9 is represented by the fixtures, pinned dependency file, CLI options, and execution metadata. A full experiment manifest, benchmark adapter, final dataset splits, baselines, ablations, and evaluation harness remain to be implemented.
+
+The tests in tests/test_core.py and the captured output in docs/evidence document specific local behaviors. Eleven tests passed in the supplied Python 3.12.14 environment. Neither the Unit 2 targets nor robustness against unseen attacks have been measured. Quarantine must count as benign rejection when later estimating false positives; it cannot be omitted to improve reported accuracy.
+
+The workflow file is prepared to run those tests and both demos after repository events. No remote Actions execution, deployment, Git commit, or merge is asserted by this package. The README explains how to integrate it into the existing repository while retaining earlier documentation.

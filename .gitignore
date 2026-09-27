@@ -189,4 +189,10 @@ cython_debug/
 /private/
 ~$*
 .DS_Store
-Thumbs.db
+Thumbs.dbresults/*.jsonl
+*.key
+*.pem
+
+results/*.jsonl
+*.key
+*.pem
