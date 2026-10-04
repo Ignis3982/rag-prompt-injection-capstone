@@ -1,0 +1,100 @@
+{
+  "schema": "screening-audit-v1",
+  "run_id": "5ba1f8d5-0abe-4ad7-b038-fece9b0b12f1",
+  "query_length": 31,
+  "policy": {
+    "version": "unit5-policy-v1",
+    "allow_below": 0.35,
+    "block_at": 0.75,
+    "disagreement_at": 0.6,
+    "semantic_weight": 0.7
+  },
+  "corpus_sha256": "ccbc2f5afca1b3831f63679c8bb633efe0b4e10502aaa0c0a7b56d99b45d8892",
+  "decisions": [
+    {
+      "document_id": "benign-router-01",
+      "decision": "allow",
+      "reason": "completed_screening",
+      "windows": [
+        {
+          "start": 0,
+          "end": 134,
+          "decision": "allow",
+          "semantic": 0.049146425205351264,
+          "structural": 0.0,
+          "risk": 0.03440249764374588,
+          "uncertain": false,
+          "reasons": [],
+          "locations": []
+        }
+      ]
+    },
+    {
+      "document_id": "injection-router-01",
+      "decision": "quarantine",
+      "reason": "completed_screening",
+      "windows": [
+        {
+          "start": 0,
+          "end": 178,
+          "decision": "quarantine",
+          "semantic": 0.22009906868207796,
+          "structural": 1.0,
+          "risk": 0.4540693480774546,
+          "uncertain": true,
+          "reasons": [
+            "instruction_override",
+            "sensitive_disclosure",
+            "exfiltration",
+            "signal_disagreement",
+            "review_band"
+          ],
+          "locations": [
+            {
+              "code": "instruction_override",
+              "start": 39,
+              "end": 62
+            },
+            {
+              "code": "sensitive_disclosure",
+              "start": 67,
+              "end": 91
+            },
+            {
+              "code": "exfiltration",
+              "start": 117,
+              "end": 155
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "document_id": "network-02",
+      "decision": "allow",
+      "reason": "completed_screening",
+      "windows": [
+        {
+          "start": 0,
+          "end": 136,
+          "decision": "allow",
+          "semantic": 0.023437323065539806,
+          "structural": 0.0,
+          "risk": 0.016406126145877862,
+          "uncertain": false,
+          "reasons": [],
+          "locations": []
+        }
+      ]
+    }
+  ],
+  "approved_count": 2,
+  "scope": "synthetic_functional_validation_not_security_benchmark",
+  "head_sha256": "b00220ade400b219f4c6eb217a8a45f21ac217a06f1d0f9ede1aba4ac2793110",
+  "encoder": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "onnx_sha256": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+    "tokenizer_sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+  }
+}

@@ -1,0 +1,10 @@
+UNIT 5 | frozen MiniLM + fitted head + structural rules
+injection-router-only QUARANTINE completed_screening
+  semantic=0.2201 rules=1.00 risk=0.4541 uncertain=True
+  reasons: instruction_override, sensitive_disclosure, exfiltration, signal_disagreement, review_band
+  evidence: instruction_override offsets 39 62
+  evidence: sensitive_disclosure offsets 67 91
+  evidence: exfiltration offsets 117 155
+Insufficient approved context. No answer produced.
+Audit: docs\evidence\unit5\attack_only_audit.json
+Functional demonstration only; no LLM attack-success measurement.

@@ -1,0 +1,12 @@
+[run]
+branch = True
+source = src/rag_guard
+omit =
+    src/rag_guard/__init__.py
+    src/rag_guard/core.py
+    src/rag_guard/demo.py
+    src/rag_guard/unit5_demo.py
+
+[report]
+show_missing = True
+precision = 2

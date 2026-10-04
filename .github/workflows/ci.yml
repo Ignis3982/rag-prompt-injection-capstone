@@ -1,4 +1,4 @@
-name: unit4-prototype-ci
+name: capstone-tests
 
 on:
   push:
@@ -18,10 +18,16 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: python -m pip install -r requirements.txt
-      - name: Run tests
-        run: python -m unittest discover -s tests -v
-      - name: Run smoke demo
-        run: python -m src.rag_guard.demo "How do I reset a router safely?"
-      - name: Run insufficient context demo
-        run: python -m src.rag_guard.demo "How do I reset a router safely?" --data config/attack_only.json
+        run: python -m pip install -r requirements-dev.txt
+      - name: Remove previously recorded evidence from this CI workspace
+        run: python -c "from pathlib import Path; import shutil; p=Path('docs/evidence/unit5'); shutil.rmtree(p); p.mkdir(parents=True)"
+      - name: Download pinned public embedding model
+        run: python -m tools.download_model
+      - name: Run module and real-model tests with coverage
+        run: python -m tools.capture_evidence
+      - name: Retain test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unit5-evidence
+          path: docs/evidence/unit5/

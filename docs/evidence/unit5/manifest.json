@@ -1,0 +1,107 @@
+{
+  "captured_utc": "2026-10-04T14:16:46.783940+00:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10",
+  "packages": {
+    "scikit-learn": "1.8.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "onnxruntime": "1.23.2",
+    "tokenizers": "0.22.2",
+    "huggingface-hub": "0.36.0",
+    "pytest": "8.4.2",
+    "pytest-cov": "7.0.0",
+    "coverage": "7.16.2"
+  },
+  "files_sha256": {
+    "src\\rag_guard\\defense.py": "66057ee67dd942b740ff97c04da8e3ed9c8eb0bccf42e30502c9e4056c174bc8",
+    "src\\rag_guard\\semantic.py": "db4c5ff7da7a7400858b0a7bbbb004eb8768db7f8d0a90753ae835ae52356904",
+    "src\\rag_guard\\screening.py": "90db829d6e2fb56369d8ba0739c1756b498a5b2945ed0123bb6b273cb4f96d42",
+    "src\\rag_guard\\unit5_demo.py": "c28c32c72e81e748c4f69ebd4af48f346d9162046b875126c1b7258f042ac61c",
+    "config\\unit5_development.json": "db28a5cc820a1996b1038ec10bce6c02320c5af586126e33f0f41727745fc4e8",
+    "config\\semantic_head.json": "b00220ade400b219f4c6eb217a8a45f21ac217a06f1d0f9ede1aba4ac2793110",
+    "config\\fixtures.json": "af002686e01a91ef0a688b2d09af70f4c95dccca151b96164e2cf214e685c625",
+    "config\\attack_only.json": "ba45fcf69f1985cc2370878bb19597510df39e2a71321387be0fb5362d610813",
+    "requirements.txt": "08704601415272fbf90ef12a6b04bcd6ef9cc3a87e9be3c71e421c8ac7dcbb29",
+    "requirements-dev.txt": "d246fc92280f6f4086c365d43b7bfa751c571c130100eb59c7aa20a46b86085d",
+    ".coveragerc": "f058034c194ef31119709cb2398de039b7413b3c0677005a609ea7804177e26c"
+  },
+  "executions": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit5/test_defense.py",
+        "tests/unit5/test_semantic.py",
+        "-v",
+        "--no-header",
+        "--no-summary",
+        "--cov=src/rag_guard",
+        "--cov-branch",
+        "--cov-report=term-missing",
+        "--cov-report=json:docs/evidence/unit5/unit_coverage.json"
+      ],
+      "log": "unit_tests.txt",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit5",
+        "-v",
+        "--no-header",
+        "--no-summary",
+        "--cov=src/rag_guard",
+        "--cov-branch",
+        "--cov-report=term-missing",
+        "--cov-report=json:docs/evidence/unit5/coverage.json",
+        "--junitxml=docs/evidence/unit5/junit.xml"
+      ],
+      "log": "tests.txt",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/test_core.py",
+        "-v",
+        "--no-header",
+        "--no-summary"
+      ],
+      "log": "unit4_regression.txt",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "src.rag_guard.unit5_demo",
+        "How do I reset a router safely?",
+        "--output",
+        "docs/evidence/unit5/mixed_audit.json"
+      ],
+      "log": "mixed_demo.txt",
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "src.rag_guard.unit5_demo",
+        "How do I reset a router safely?",
+        "--data",
+        "config/attack_only.json",
+        "--output",
+        "docs/evidence/unit5/attack_only_audit.json"
+      ],
+      "log": "attack_only_demo.txt",
+      "exit_code": 0
+    }
+  ],
+  "scope": "functional checks, not benchmark effectiveness or security certification"
+}
