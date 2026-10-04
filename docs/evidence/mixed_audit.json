@@ -1,0 +1,79 @@
+{
+  "timestamp_utc": "2026-09-27T06:39:44.733306+00:00",
+  "query_length": 31,
+  "retrieved_count": 3,
+  "decisions": [
+    {
+      "document_id": "benign-router-01",
+      "rank": 1,
+      "decision": "allow",
+      "reason": "below demonstration thresholds",
+      "window_offsets": [
+        [
+          0,
+          134
+        ]
+      ],
+      "detection": {
+        "similarity_score": 0.0778,
+        "structural_score": 0.0,
+        "fused_score": 0.0467,
+        "disagreement": 0.0778,
+        "uncertain": false,
+        "reasons": []
+      }
+    },
+    {
+      "document_id": "injection-router-01",
+      "rank": 2,
+      "decision": "quarantine",
+      "reason": "instruction override, sensitive disclosure, external exfiltration, external URL present, signal disagreement or margin uncertainty",
+      "window_offsets": [
+        [
+          0,
+          178
+        ]
+      ],
+      "detection": {
+        "similarity_score": 0.2669,
+        "structural_score": 1.0,
+        "fused_score": 0.5602,
+        "disagreement": 0.7331,
+        "uncertain": true,
+        "reasons": [
+          "instruction override",
+          "sensitive disclosure",
+          "external exfiltration",
+          "external URL present",
+          "signal disagreement or margin uncertainty"
+        ]
+      }
+    },
+    {
+      "document_id": "network-02",
+      "rank": 3,
+      "decision": "allow",
+      "reason": "below demonstration thresholds",
+      "window_offsets": [
+        [
+          0,
+          136
+        ]
+      ],
+      "detection": {
+        "similarity_score": 0.0394,
+        "structural_score": 0.0,
+        "fused_score": 0.0236,
+        "disagreement": 0.0394,
+        "uncertain": false,
+        "reasons": []
+      }
+    }
+  ],
+  "approved_count": 2,
+  "corpus_sha256": "ccbc2f5afca1b3831f63679c8bb633efe0b4e10502aaa0c0a7b56d99b45d8892",
+  "implementation_sha256": "188fb19050f780f771cea83062adf52aab881c66c9734188ecf6efeea072e7b0",
+  "python_version": "3.12.14",
+  "sklearn_version": "1.8.0",
+  "scope": "synthetic_smoke_demo_not_benchmark"
+}

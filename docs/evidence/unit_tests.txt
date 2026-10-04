@@ -1,0 +1,16 @@
+test_attack_only_corpus_produces_insufficient_context (test_core.PrototypeTests.test_attack_only_corpus_produces_insufficient_context) ... ok
+test_detector_exception_withholds_affected_passage (test_core.PrototypeTests.test_detector_exception_withholds_affected_passage) ... ok
+test_gate_never_allows_high_risk_passage (test_core.PrototypeTests.test_gate_never_allows_high_risk_passage) ... ok
+test_invalid_query_is_rejected (test_core.PrototypeTests.test_invalid_query_is_rejected) ... ok
+test_mixed_corpus_keeps_benign_and_withholds_attack (test_core.PrototypeTests.test_mixed_corpus_keeps_benign_and_withholds_attack) ... ok
+test_nan_detector_output_cannot_be_allowed (test_core.PrototypeTests.test_nan_detector_output_cannot_be_allowed) ... ok
+test_no_relevant_retrieval_returns_no_answer (test_core.PrototypeTests.test_no_relevant_retrieval_returns_no_answer) ... ok
+test_ordinary_instructions_are_allowed_in_fixture (test_core.PrototypeTests.test_ordinary_instructions_are_allowed_in_fixture) ... ok
+test_oversized_passage_is_withheld_without_truncation (test_core.PrototypeTests.test_oversized_passage_is_withheld_without_truncation) ... ok
+test_preprocessing_preserves_original_offsets (test_core.PrototypeTests.test_preprocessing_preserves_original_offsets) ... ok
+test_structural_signal_finds_injection_language (test_core.PrototypeTests.test_structural_signal_finds_injection_language) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.017s
+
+OK
