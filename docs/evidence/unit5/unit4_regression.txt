@@ -1,0 +1,16 @@
+============================= test session starts =============================
+collecting ... collected 11 items
+
+tests/test_core.py::PrototypeTests::test_attack_only_corpus_produces_insufficient_context PASSED [  9%]
+tests/test_core.py::PrototypeTests::test_detector_exception_withholds_affected_passage PASSED [ 18%]
+tests/test_core.py::PrototypeTests::test_gate_never_allows_high_risk_passage PASSED [ 27%]
+tests/test_core.py::PrototypeTests::test_invalid_query_is_rejected PASSED [ 36%]
+tests/test_core.py::PrototypeTests::test_mixed_corpus_keeps_benign_and_withholds_attack PASSED [ 45%]
+tests/test_core.py::PrototypeTests::test_nan_detector_output_cannot_be_allowed PASSED [ 54%]
+tests/test_core.py::PrototypeTests::test_no_relevant_retrieval_returns_no_answer PASSED [ 63%]
+tests/test_core.py::PrototypeTests::test_ordinary_instructions_are_allowed_in_fixture PASSED [ 72%]
+tests/test_core.py::PrototypeTests::test_oversized_passage_is_withheld_without_truncation PASSED [ 81%]
+tests/test_core.py::PrototypeTests::test_preprocessing_preserves_original_offsets PASSED [ 90%]
+tests/test_core.py::PrototypeTests::test_structural_signal_finds_injection_language PASSED [100%]
+
+============================= 11 passed in 0.93s ==============================
