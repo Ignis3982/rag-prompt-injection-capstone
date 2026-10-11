@@ -1,10 +1,23 @@
 # Robust and Explainable Detection of Indirect Prompt Injection in Retrieval-Augmented Generation Systems
 
-MSIT 5910 Capstone Project. Unit 5 adds a working local semantic classifier,
-structural evidence, fusion, and a deterministic security gate. These are
-research development components, not an experimentally validated defense.
+MSIT 5910 Capstone Project. Unit 6 integrates hybrid passage screening,
+local Ollama generation, and a desktop interface. This is a research
+prototype, not a validated production security defense.
 
-## Current status
+## Current status (Unit 6)
+
+The verified local pilot (20261010T151239Z-189082a4) evaluated 24
+synthetic cases in four modes with three repetitions (288 executions).
+Hybrid F1 was 0.632, benign FPR was 8.33%, factual utility loss was
+8.33 percentage points, and paired answered-benign latency overhead
+was 11.08%. Exact-marker attack success changed from 8.33% to 0%,
+but only one attack succeeded in the undefended baseline.
+These results do not demonstrate robustness against adaptive attacks.
+
+See docs/unit6/README.md for execution instructions and limitations.
+Raw observations, screenshots, and local models remain outside Git.
+
+## Unit 5 baseline (historical)
 
 The existing Unit 4 implementation remains in `core.py` and `demo.py` for
 comparison. The Unit 5 entry point is `src.rag_guard.unit5_demo`. It uses a
@@ -14,12 +27,12 @@ train a foundation model. Rules produce original-document locations; they do
 not explain the neural model's internal reasoning. Score calibration outside
 this small development set has not been established.
 
-The downstream output is still an extractive preview. A genuine LLM baseline,
-BIPIA integration, held-out family evaluation, adaptive attacks, utility/latency
-measurement, and ablations remain outstanding. Unit 2 targets are unchanged
-proposed evaluation criteria. No F1 or attack-success result is claimed here.
+At the end of Unit 5, downstream output was an extractive preview.
+Unit 6 subsequently integrated local generation and completed the synthetic pilot.
+BIPIA, held-out attack-family evaluation, adaptive attacks, and formal
+ablation studies remain future work. Unit 2 targets remain provisional.
 
-## Run on Windows PowerShell
+## Unit 5 reproduction (historical, Windows PowerShell)
 
 From the repository folder, with Python 3.12 installed:
 
@@ -68,10 +81,10 @@ Quoted attacks and uncommon language can still be overblocked.
 
 ## Repository workflow
 
-The remote's existing branches are `main` and `Development` (capital D).
-`unit5-core-logic` is the isolated Unit 5 working branch based on reviewed main.
-Integrate it into Development, run CI, then merge through a pull request into
-main. Preserve existing Unit 1–4 documents and commit history. Local tags and
+Unit 5 was integrated into `Development` and `main` through pull requests.
+Unit 6 development uses `unit6-integration`, based on `Development`.
+Integration should proceed through reviewed pull requests into `Development`
+and then `main`, preserving the established commit history. Local tags and
 prepared notes do not themselves create GitHub release pages. See `docs/releases`
 for descriptions and publication status. Never force-push or move a published
 tag to conceal changes.
